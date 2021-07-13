@@ -13,6 +13,17 @@
 		84763493269CB4E100D5FBF4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84763491269CB4E100D5FBF4 /* Main.storyboard */; };
 		84763495269CB4E400D5FBF4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84763494269CB4E400D5FBF4 /* Assets.xcassets */; };
 		84763498269CB4E400D5FBF4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84763496269CB4E400D5FBF4 /* LaunchScreen.storyboard */; };
+		847634A2269CB87700D5FBF4 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847634A1269CB87700D5FBF4 /* SecondViewController.swift */; };
+		847634A6269CBE3000D5FBF4 /* DeviceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847634A5269CBE3000D5FBF4 /* DeviceModel.swift */; };
+		847634AA269CC15E00D5FBF4 /* DeviceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847634A9269CC15E00D5FBF4 /* DeviceCell.swift */; };
+		847634B1269CC23900D5FBF4 /* DeviceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 847634B0269CC23900D5FBF4 /* DeviceCell.xib */; };
+		847634B4269CC90300D5FBF4 /* Device.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847634B3269CC90300D5FBF4 /* Device.generated.swift */; };
+		847634BB269DAF7800D5FBF4 /* CustomHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847634BA269DAF7700D5FBF4 /* CustomHeaderView.swift */; };
+		847634C3269DB10000D5FBF4 /* CustomHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 847634C2269DB10000D5FBF4 /* CustomHeaderView.xib */; };
+		847634C9269DDF1800D5FBF4 /* ExpandedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847634C8269DDF1800D5FBF4 /* ExpandedModel.swift */; };
+		847634CF269DF86300D5FBF4 /* DeviceInfoScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 847634CE269DF86300D5FBF4 /* DeviceInfoScreen.xib */; };
+		847634D2269E073900D5FBF4 /* DeviceInfoScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847634D1269E073900D5FBF4 /* DeviceInfoScreen.swift */; };
+		84E22282269E1FD30028302A /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E22281269E1FD30028302A /* UIViewController+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +35,17 @@
 		84763494269CB4E400D5FBF4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		84763497269CB4E400D5FBF4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		84763499269CB4E400D5FBF4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		847634A1269CB87700D5FBF4 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		847634A5269CBE3000D5FBF4 /* DeviceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceModel.swift; sourceTree = "<group>"; };
+		847634A9269CC15E00D5FBF4 /* DeviceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceCell.swift; sourceTree = "<group>"; };
+		847634B0269CC23900D5FBF4 /* DeviceCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DeviceCell.xib; sourceTree = "<group>"; };
+		847634B3269CC90300D5FBF4 /* Device.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Device.generated.swift; path = ../../../library/Device.generated.swift; sourceTree = "<group>"; };
+		847634BA269DAF7700D5FBF4 /* CustomHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomHeaderView.swift; sourceTree = "<group>"; };
+		847634C2269DB10000D5FBF4 /* CustomHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomHeaderView.xib; sourceTree = "<group>"; };
+		847634C8269DDF1800D5FBF4 /* ExpandedModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandedModel.swift; sourceTree = "<group>"; };
+		847634CE269DF86300D5FBF4 /* DeviceInfoScreen.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DeviceInfoScreen.xib; sourceTree = "<group>"; };
+		847634D1269E073900D5FBF4 /* DeviceInfoScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceInfoScreen.swift; sourceTree = "<group>"; };
+		84E22281269E1FD30028302A /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,13 +80,40 @@
 			children = (
 				8476348B269CB4E100D5FBF4 /* AppDelegate.swift */,
 				8476348D269CB4E100D5FBF4 /* SceneDelegate.swift */,
-				8476348F269CB4E100D5FBF4 /* ViewController.swift */,
+				847634CC269DF73300D5FBF4 /* UIViewController */,
+				847634CD269DF77000D5FBF4 /* Models */,
+				847634BA269DAF7700D5FBF4 /* CustomHeaderView.swift */,
+				84E22281269E1FD30028302A /* UIViewController+Extension.swift */,
 				84763491269CB4E100D5FBF4 /* Main.storyboard */,
 				84763494269CB4E400D5FBF4 /* Assets.xcassets */,
 				84763496269CB4E400D5FBF4 /* LaunchScreen.storyboard */,
 				84763499269CB4E400D5FBF4 /* Info.plist */,
+				847634B3269CC90300D5FBF4 /* Device.generated.swift */,
+				847634B0269CC23900D5FBF4 /* DeviceCell.xib */,
+				847634C2269DB10000D5FBF4 /* CustomHeaderView.xib */,
+				847634CE269DF86300D5FBF4 /* DeviceInfoScreen.xib */,
 			);
 			path = Practice_Collections;
+			sourceTree = "<group>";
+		};
+		847634CC269DF73300D5FBF4 /* UIViewController */ = {
+			isa = PBXGroup;
+			children = (
+				8476348F269CB4E100D5FBF4 /* ViewController.swift */,
+				847634A1269CB87700D5FBF4 /* SecondViewController.swift */,
+			);
+			path = UIViewController;
+			sourceTree = "<group>";
+		};
+		847634CD269DF77000D5FBF4 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				847634A5269CBE3000D5FBF4 /* DeviceModel.swift */,
+				847634A9269CC15E00D5FBF4 /* DeviceCell.swift */,
+				847634C8269DDF1800D5FBF4 /* ExpandedModel.swift */,
+				847634D1269E073900D5FBF4 /* DeviceInfoScreen.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -124,9 +173,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				847634C3269DB10000D5FBF4 /* CustomHeaderView.xib in Resources */,
 				84763498269CB4E400D5FBF4 /* LaunchScreen.storyboard in Resources */,
 				84763495269CB4E400D5FBF4 /* Assets.xcassets in Resources */,
+				847634CF269DF86300D5FBF4 /* DeviceInfoScreen.xib in Resources */,
 				84763493269CB4E100D5FBF4 /* Main.storyboard in Resources */,
+				847634B1269CC23900D5FBF4 /* DeviceCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,9 +189,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				847634BB269DAF7800D5FBF4 /* CustomHeaderView.swift in Sources */,
+				84E22282269E1FD30028302A /* UIViewController+Extension.swift in Sources */,
+				847634A2269CB87700D5FBF4 /* SecondViewController.swift in Sources */,
 				84763490269CB4E100D5FBF4 /* ViewController.swift in Sources */,
+				847634D2269E073900D5FBF4 /* DeviceInfoScreen.swift in Sources */,
+				847634B4269CC90300D5FBF4 /* Device.generated.swift in Sources */,
+				847634A6269CBE3000D5FBF4 /* DeviceModel.swift in Sources */,
 				8476348C269CB4E100D5FBF4 /* AppDelegate.swift in Sources */,
+				847634C9269DDF1800D5FBF4 /* ExpandedModel.swift in Sources */,
 				8476348E269CB4E100D5FBF4 /* SceneDelegate.swift in Sources */,
+				847634AA269CC15E00D5FBF4 /* DeviceCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,6 +348,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Practice_Collections/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -306,6 +367,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Practice_Collections/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
