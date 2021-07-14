@@ -17,6 +17,7 @@ class SecondViewController: UIViewController {
     var arrayOfData = [ExpandedModel]()
     
     let headerID = String(describing: CustomHeaderView.self)
+    let deviceCellID = String(describing: DeviceCell.self)
     
     
     override func viewDidLoad() {
@@ -26,10 +27,9 @@ class SecondViewController: UIViewController {
         
         arrayOfData = [ExpandedModel(isExpanded: false, title: "iPhone", arrayDevices: DeviceModel.getAllPhones()), ExpandedModel(isExpanded: false, title: "iPad", arrayDevices: DeviceModel.getAllPads())]
         
-        tableView.register(UINib(nibName: "DeviceCell", bundle: nil), forCellReuseIdentifier: "DeviceCell")
+        tableView.register(UINib(nibName: deviceCellID, bundle: nil), forCellReuseIdentifier: deviceCellID)
         tableViewConfig()
 //        devices = [DeviceModel.getAllPhones(), DeviceModel.getAllPads()]
-        
         tableView.reloadData()
 
     }
@@ -55,7 +55,7 @@ extension SecondViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "DeviceCell", for: indexPath) as! DeviceCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: deviceCellID, for: indexPath) as! DeviceCell
         
         let model = arrayOfData[indexPath.section].arrayDevices[indexPath.row]
 
@@ -112,12 +112,9 @@ extension SecondViewController: UITableViewDelegate {
 extension SecondViewController: HeaderViewDelegate {
     
     func expandedSection(button: UIButton) {
-        
         let section = button.tag
         let isExpanded = arrayOfData[section].isExpanded
         arrayOfData[section].isExpanded = !isExpanded
-
         tableView.reloadSections(IndexSet(integer: section), with: .automatic)
-        
     }
 }
