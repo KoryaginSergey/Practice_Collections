@@ -12,6 +12,6 @@ struct ExpandedModel {
     
     var isExpanded: Bool
     let title: String
-    let arrayDevices: [DeviceModel]
+    var arrayDevices: [DeviceModel]
     
 }

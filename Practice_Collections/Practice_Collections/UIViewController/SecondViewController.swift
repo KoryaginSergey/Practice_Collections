@@ -22,6 +22,8 @@ class SecondViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationItem.title = "Devices"
+        
         arrayOfData = [ExpandedModel(isExpanded: false, title: "iPhone", arrayDevices: DeviceModel.getAllPhones()), ExpandedModel(isExpanded: false, title: "iPad", arrayDevices: DeviceModel.getAllPads())]
         
         tableView.register(UINib(nibName: "DeviceCell", bundle: nil), forCellReuseIdentifier: "DeviceCell")
@@ -72,7 +74,11 @@ extension SecondViewController: UITableViewDelegate {
         let viewController = DeviceInfoScreen.create() as DeviceInfoScreen
         viewController.deviceModel = model
         navigationController?.pushViewController(viewController, animated: true)
-        
+    }
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let done = doneAction(indexPath: indexPath)
+        return UISwipeActionsConfiguration(actions: [done])
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -90,6 +96,16 @@ extension SecondViewController: UITableViewDelegate {
             header.delegate = self
 
         return header
+    }
+    
+    func doneAction(indexPath: IndexPath) -> UIContextualAction {
+        let action = UIContextualAction(style: .destructive, title: "Delete") { (action, view, completion) in
+            self.arrayOfData[indexPath.section].arrayDevices.remove(at: indexPath.row)
+            self.tableView.deleteRows(at: [indexPath], with: .automatic)
+            completion(true)
+        }
+        action.backgroundColor = .systemRed
+        return action
     }
 }
 

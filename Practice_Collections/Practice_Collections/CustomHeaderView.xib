@@ -15,8 +15,7 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H84-5k-bKL">
-                    <rect key="frame" x="0.0" y="44" width="509" height="81"/>
-                    <color key="backgroundColor" systemColor="systemGray5Color"/>
+                    <rect key="frame" x="20" y="44" width="469" height="81"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -39,12 +38,12 @@
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="zAR-Kj-hLr" firstAttribute="top" secondItem="hAu-wj-xWf" secondAttribute="top" id="1i9-Ma-YrG"/>
-                <constraint firstItem="hAu-wj-xWf" firstAttribute="trailing" secondItem="H84-5k-bKL" secondAttribute="trailing" id="9v9-5s-jzW"/>
+                <constraint firstItem="hAu-wj-xWf" firstAttribute="trailing" secondItem="H84-5k-bKL" secondAttribute="trailing" constant="20" id="9v9-5s-jzW"/>
                 <constraint firstItem="hAu-wj-xWf" firstAttribute="trailing" secondItem="zMU-oI-zub" secondAttribute="trailing" id="INX-Yu-6VZ"/>
                 <constraint firstItem="zAR-Kj-hLr" firstAttribute="width" secondItem="zMU-oI-zub" secondAttribute="width" constant="303" id="Iao-AQ-8fz"/>
                 <constraint firstItem="zMU-oI-zub" firstAttribute="top" secondItem="hAu-wj-xWf" secondAttribute="top" id="LCD-zK-FIn"/>
                 <constraint firstItem="zMU-oI-zub" firstAttribute="leading" secondItem="zAR-Kj-hLr" secondAttribute="trailing" id="b0n-gO-D23"/>
-                <constraint firstItem="H84-5k-bKL" firstAttribute="leading" secondItem="hAu-wj-xWf" secondAttribute="leading" id="bDh-Rc-hFH"/>
+                <constraint firstItem="H84-5k-bKL" firstAttribute="leading" secondItem="hAu-wj-xWf" secondAttribute="leading" constant="20" id="bDh-Rc-hFH"/>
                 <constraint firstItem="hAu-wj-xWf" firstAttribute="bottom" secondItem="zAR-Kj-hLr" secondAttribute="bottom" id="dzm-Tu-QYT"/>
                 <constraint firstItem="H84-5k-bKL" firstAttribute="top" secondItem="hAu-wj-xWf" secondAttribute="top" id="f7w-bx-YiL"/>
                 <constraint firstItem="hAu-wj-xWf" firstAttribute="bottom" secondItem="H84-5k-bKL" secondAttribute="bottom" id="lgM-HQ-XY3"/>
@@ -62,9 +61,6 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemGray5Color">
-            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
