@@ -8,12 +8,12 @@
 import UIKit
 
 
-class ViewController: UIViewController {
+class FirstViewController: UIViewController {
 
     @IBOutlet weak private var tableView: UITableView!
     
-    var devices = [DeviceModel]()
-    let deviceCellID = String(describing: DeviceCell.self)
+    var devices:[DeviceModel] = SharedModel.sharedInstance.allDevices
+    let deviceCellID = String(describing: DeviceTableViewCell.self)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,20 +21,24 @@ class ViewController: UIViewController {
         self.navigationItem.title = "Devices"
         
         tableView.register(UINib(nibName: deviceCellID, bundle: nil), forCellReuseIdentifier: deviceCellID)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
-        devices = DeviceModel.getAllDevices()
-        
+        self.devices = SharedModel.sharedInstance.allDevices
         tableView.reloadData()
     }
+    
 }
 
-extension ViewController: UITableViewDataSource {
+extension FirstViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return devices.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: deviceCellID, for: indexPath) as! DeviceCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: deviceCellID, for: indexPath) as! DeviceTableViewCell
         
         let device = devices[indexPath.row]
         
@@ -46,7 +50,7 @@ extension ViewController: UITableViewDataSource {
     }
 }
 
-extension ViewController: UITableViewDelegate {
+extension FirstViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100.0
@@ -54,7 +58,7 @@ extension ViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let model = devices[indexPath.row]
-        let viewController = DeviceInfoScreen.create() as DeviceInfoScreen
+        let viewController = DeviceInfoViewController.create() as DeviceInfoViewController
         viewController.deviceModel = model
         
         navigationController?.pushViewController(viewController, animated: true)

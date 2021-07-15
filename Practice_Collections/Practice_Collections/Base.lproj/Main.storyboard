@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="7M6-6X-B7i">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -46,7 +47,6 @@
         <!--Second-->
         <scene sceneID="mk5-n9-9pX">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="KWj-tK-kad" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController id="Ios-o3-M6c" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Second" id="jXr-4c-hiP"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="tz9-he-Lyz">
@@ -57,6 +57,7 @@
                         <segue destination="Zqc-sS-IRY" kind="relationship" relationship="rootViewController" id="Bha-zP-cpo"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KWj-tK-kad" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-310" y="501"/>
         </scene>
@@ -95,10 +96,10 @@
             </objects>
             <point key="canvasLocation" x="586" y="501"/>
         </scene>
-        <!--View Controller-->
+        <!--First View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Practice_Collections" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="FirstViewController" customModule="Practice_Collections" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

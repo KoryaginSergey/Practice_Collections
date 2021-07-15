@@ -8,10 +8,16 @@
 import Foundation
 
 
-struct ExpandedModel {
+class ExpandedModel {
     
     var isExpanded: Bool
     let title: String
     var arrayDevices: [DeviceModel]
+    
+    init(isExpanded: Bool, title: String, arrayDevices:[DeviceModel]) {
+        self.isExpanded = isExpanded
+        self.title = title
+        self.arrayDevices = arrayDevices
+    }
     
 }

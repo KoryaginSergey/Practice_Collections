@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 
-class DeviceCell: UITableViewCell {
+class DeviceTableViewCell: UITableViewCell {
     
     @IBOutlet weak var deviceImage: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
