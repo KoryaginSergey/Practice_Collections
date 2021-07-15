@@ -19,6 +19,7 @@ class DeviceInfoScreen: UIViewController {
     
     
     var deviceModel: DeviceModel?
+    let nameForNavigationTitle = "Device Info"
 
 
     override func viewWillAppear(_ animated: Bool) {
@@ -32,7 +33,7 @@ class DeviceInfoScreen: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     
-        self.navigationItem.title = "Device Info"
+        self.navigationItem.title = nameForNavigationTitle
         
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.edit, target: self, action: #selector(editSelector))
     }
@@ -43,12 +44,14 @@ class DeviceInfoScreen: UIViewController {
 
     func showSimpleActionSheet(controller: UIViewController) {
         let alert = UIAlertController(title: "Actions", message: nil, preferredStyle: .actionSheet)
-        alert.addAction(UIAlertAction(title: "Change foto", style: .default, handler: { (_) in}))
-        
+        alert.addAction(UIAlertAction(title: "Change foto", style: .default, handler: { (_) in
+            
+            
+            
+        }))
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: {_ in }))
         
         present(alert, animated: true, completion: {})
-    
     }
     
 }

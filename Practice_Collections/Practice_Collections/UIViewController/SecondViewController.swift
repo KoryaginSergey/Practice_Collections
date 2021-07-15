@@ -19,13 +19,16 @@ class SecondViewController: UIViewController {
     let headerID = String(describing: CustomHeaderView.self)
     let deviceCellID = String(describing: DeviceCell.self)
     
+    let titleForIPhoneSection = "iPhone"
+    let titleForIPadSection = "iPad"
+    var defaultValueForIsExpanded = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.navigationItem.title = "Devices"
         
-        arrayOfData = [ExpandedModel(isExpanded: false, title: "iPhone", arrayDevices: DeviceModel.getAllPhones()), ExpandedModel(isExpanded: false, title: "iPad", arrayDevices: DeviceModel.getAllPads())]
+        arrayOfData = [ExpandedModel(isExpanded: defaultValueForIsExpanded, title: titleForIPhoneSection, arrayDevices: DeviceModel.getAllPhones()), ExpandedModel(isExpanded: defaultValueForIsExpanded, title: titleForIPadSection, arrayDevices: DeviceModel.getAllPads())]
         
         tableView.register(UINib(nibName: deviceCellID, bundle: nil), forCellReuseIdentifier: deviceCellID)
         tableViewConfig()
@@ -111,10 +114,21 @@ extension SecondViewController: UITableViewDelegate {
 
 extension SecondViewController: HeaderViewDelegate {
     
+    func addItemToList(button: UIButton) {
+        let section = button.tag
+        let isExpanded = arrayOfData[section].isExpanded
+        
+        let viewController = DeviceInfoScreen.create() as DeviceInfoScreen
+        if isExpanded != defaultValueForIsExpanded {
+        navigationController?.pushViewController(viewController, animated: true)
+        }
+    }
+    
     func expandedSection(button: UIButton) {
         let section = button.tag
         let isExpanded = arrayOfData[section].isExpanded
         arrayOfData[section].isExpanded = !isExpanded
         tableView.reloadSections(IndexSet(integer: section), with: .automatic)
     }
+    
 }

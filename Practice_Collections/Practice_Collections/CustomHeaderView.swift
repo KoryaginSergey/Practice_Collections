@@ -9,17 +9,16 @@ import UIKit
 
 protocol HeaderViewDelegate: class {
     func expandedSection(button: UIButton)
+    func addItemToList(button: UIButton)
 }
 
 
 class CustomHeaderView: UITableViewHeaderFooterView {
     
-    weak var delegate: HeaderViewDelegate?
-    
     @IBOutlet weak var forNameSectionLabel: UILabel!
     @IBOutlet weak var openSectionButton: UIButton!
     
-    
+    weak var delegate: HeaderViewDelegate?
     
     func configure(title: String, section: Int) {
             forNameSectionLabel.text = title
@@ -27,18 +26,13 @@ class CustomHeaderView: UITableViewHeaderFooterView {
         }
     
     
-    
-    
-    @IBAction func didTapForAddDeviceButton(_ sender: Any) {
-        
+    @IBAction func didTapForAddDeviceButton(_ sender: UIButton) {
+        delegate?.addItemToList(button: sender)
         
     }
     
-    
     @IBAction func didTapForOpenSectionButton(_ sender: UIButton) {
-        
         delegate?.expandedSection(button: sender)
-        
     }
     
 }
