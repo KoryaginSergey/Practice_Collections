@@ -17,9 +17,7 @@ extension UIViewController {
       guard let view = nibContent?.first, type(of:view) == self else {
         fatalError("Nib \(viewNibName) does not contain \(viewNibName) View as first object")
       }
-      
       return view as! T
     }
-    
 }
 

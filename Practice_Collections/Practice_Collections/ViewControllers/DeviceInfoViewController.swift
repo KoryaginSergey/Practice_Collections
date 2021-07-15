@@ -11,10 +11,12 @@ import UIKit
 
 class DeviceInfoViewController: UIViewController {
     
+    //MARK: - Outlets
+    
     @IBOutlet weak private var deviceImageView: UIImageView!
     @IBOutlet weak private var deviceTextField: UITextField!
     @IBOutlet weak private var deviceTextView: UITextView!
-    @IBOutlet weak var infoView: UIView!
+    @IBOutlet weak private var infoView: UIView!
     
     var saveClosure: ((_ model: DeviceModel) -> ())?
     
@@ -30,6 +32,8 @@ class DeviceInfoViewController: UIViewController {
     let nameForNavigationTitle = "Device Info"
     var deviceType: DeviceType = .phone
 
+    //MARK: - Life cycles
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     
@@ -40,17 +44,6 @@ class DeviceInfoViewController: UIViewController {
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(chooseImageSelector))
         self.deviceImageView.gestureRecognizers = [tapGesture]
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIWindow.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIWindow.keyboardWillHideNotification, object: nil)
-    }
-
-    @objc func keyboardWillShow(notification: NSNotification) {
-         print("keyboardWillShow")
-    }
-
-    @objc func keyboardWillHide(notification: NSNotification){
-         print("keyboardWillHide")
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -71,6 +64,8 @@ class DeviceInfoViewController: UIViewController {
         NotificationCenter.default.removeObserver(self)
     }
     
+    //MARK: - Functions
+    
     @objc func chooseImageSelector() {
         self.showSimpleActionSheet()
     }
@@ -82,17 +77,13 @@ class DeviceInfoViewController: UIViewController {
                 self.saveClosure?(newModel)
                 self.navigationController?.popViewController(animated: true)
                 return
-                //redirect to previuos vc
             }
-            
             model.icon = deviceImageView.image ?? UIImage(named: "Unknown")!
             model.name = deviceTextField.text ?? ""
             model.info = deviceTextView.text ?? ""
         }
         self.isEditMode = !self.isEditMode
     }
-
-    //MARK: - Private
     
     func showSimpleActionSheet() {
         let alert = UIAlertController(title: "Actions", message: nil, preferredStyle: .actionSheet)
@@ -105,12 +96,12 @@ class DeviceInfoViewController: UIViewController {
     }
     
     func presentImagePicker() {
-          let pickerController = UIImagePickerController()
-          pickerController.delegate = self
-          pickerController.sourceType = .photoLibrary
+        let pickerController = UIImagePickerController()
+        pickerController.delegate = self
+        pickerController.sourceType = .photoLibrary
 
-          self.present(pickerController, animated: true, completion: nil)
-      }
+        self.present(pickerController, animated: true, completion: nil)
+    }
     
     func updateUI() {
         self.rightNavButton?.title = self.isEditMode ? "Save" : "Edit"
@@ -120,6 +111,8 @@ class DeviceInfoViewController: UIViewController {
         self.deviceTextField.isUserInteractionEnabled = self.isEditMode
     }
 }
+
+    //MARK: - Extensions
 
 extension DeviceInfoViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
@@ -137,5 +130,4 @@ extension DeviceInfoViewController: UITextFieldDelegate {
         textField.resignFirstResponder()
         return true
     }
-
 }

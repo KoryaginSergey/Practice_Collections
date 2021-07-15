@@ -16,11 +16,12 @@ class SecondViewController: UIViewController {
     
     let headerID = String(describing: CustomHeaderView.self)
     let deviceCellID = String(describing: DeviceTableViewCell.self)
+    let heightForRowAt: CGFloat = 100.0
+    let heightForHeaderInSection: CGFloat = 60.0
     
     let titleForIPhoneSection = "iPhone"
     let titleForIPadSection = "iPad"
     var defaultValueForIsExpanded = false
-//    var valueForPadExpansion = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,6 +45,8 @@ class SecondViewController: UIViewController {
         tableView.register(nib, forHeaderFooterViewReuseIdentifier: headerID)
     }
 }
+
+    //MARK: - Extensions
 
 extension SecondViewController: UITableViewDataSource {
     
@@ -86,18 +89,17 @@ extension SecondViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
+        return heightForRowAt
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 60
+        return heightForHeaderInSection
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: headerID) as! CustomHeaderView
-        
-            header.configure(title: arrayOfData[section].title, deviceType: DeviceType(rawValue: section)!)
-            header.delegate = self
+        header.configure(title: arrayOfData[section].title, deviceType: DeviceType(rawValue: section)!)
+        header.delegate = self
 
         return header
     }
@@ -152,5 +154,4 @@ extension SecondViewController: HeaderViewDelegate {
         arrayOfData[type.rawValue].isExpanded = !isExpanded
         tableView.reloadSections(IndexSet(integer: type.rawValue), with: .automatic)
     }
-    
 }

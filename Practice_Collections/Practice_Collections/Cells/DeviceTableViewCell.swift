@@ -14,5 +14,4 @@ class DeviceTableViewCell: UITableViewCell {
     @IBOutlet weak var deviceImage: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var infoDeviceLabel: UILabel!
-    
 }

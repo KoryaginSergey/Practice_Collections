@@ -19,5 +19,4 @@ class ExpandedModel {
         self.title = title
         self.arrayDevices = arrayDevices
     }
-    
 }

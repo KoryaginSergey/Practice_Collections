@@ -29,8 +29,9 @@ class FirstViewController: UIViewController {
         self.devices = SharedModel.sharedInstance.allDevices
         tableView.reloadData()
     }
-    
 }
+
+    //MARK: - Extensions
 
 extension FirstViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

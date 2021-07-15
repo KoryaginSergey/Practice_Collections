@@ -13,6 +13,7 @@ enum DeviceType: Int {
     case pad = 1
 }
 
+
 class DeviceModel {
     
     var icon: UIImage
@@ -44,12 +45,8 @@ class DeviceModel {
     }
     
     static func getAllDevices() -> [DeviceModel] {
-        let arrayAllDevices = getAllPhones() + getAllPads()
-        
-        return arrayAllDevices
+        return getAllPhones() + getAllPads()
     }
-    
-    
 }
 
 

@@ -8,13 +8,16 @@
 import Foundation
 
 class SharedModel {
+    
     static let sharedInstance = SharedModel()
     
     init() {
         self.allDevices = DeviceModel.getAllDevices()
     }
     
-    var allDevices:[DeviceModel] = [DeviceModel]()
+    var allDevices: [DeviceModel] = [DeviceModel]()
+    
+    // MARK: - Functions
     
     func removeObject(object: DeviceModel) {
         let firstIndex = self.allDevices.firstIndex { (device) -> Bool in
