@@ -9,8 +9,8 @@ import UIKit
 
 
 protocol HeaderViewDelegate: class {
-    func expandedSection(button: UIButton, type: DeviceType)
-    func addItemToList(button: UIButton, type: DeviceType)
+    func headerViewDidExpandedSection(type: DeviceType)
+    func headerViewDidAddItemToList(type: DeviceType)
 }
 
 class CustomHeaderView: UITableViewHeaderFooterView {
@@ -30,11 +30,11 @@ class CustomHeaderView: UITableViewHeaderFooterView {
     }
     
     @IBAction func didTapForAddDeviceButton(_ sender: UIButton) {
-        self.delegate?.addItemToList(button: sender, type: self.deviceType)
+        self.delegate?.headerViewDidAddItemToList(type: self.deviceType)
     }
     
     @IBAction func didTapForOpenSectionButton(_ sender: UIButton) {
-        self.delegate?.expandedSection(button: sender, type: self.deviceType)
+        self.delegate?.headerViewDidExpandedSection(type: self.deviceType)
     }
     
     override func awakeFromNib() {

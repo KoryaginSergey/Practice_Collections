@@ -26,7 +26,7 @@ class DeviceInfoViewController: UIViewController {
         }
     }
     
-    var rightNavButton: UIBarButtonItem?
+    private var rightNavButton: UIBarButtonItem?
     
     var deviceModel: DeviceModel?
     let nameForNavigationTitle = "Device Info"
@@ -79,7 +79,9 @@ class DeviceInfoViewController: UIViewController {
     @objc func editSelector() {
         if self.isEditMode {
             guard let model = deviceModel else {
-                let newModel = DeviceModel(icon: self.deviceImageView.image ?? UIImage(named: "Unknown")!, name: self.deviceTextField.text ?? "", info: self.deviceTextView.text ?? "", type: self.deviceType)
+                let newModel = DeviceModel(icon: self.deviceImageView.image ?? UIImage(named: "Unknown")!,
+                                           name: self.deviceTextField.text ?? "", info: self.deviceTextView.text ?? "",
+                                           type: self.deviceType)
                 self.saveClosure?(newModel)
                 self.navigationController?.popViewController(animated: true)
                 return
@@ -89,32 +91,6 @@ class DeviceInfoViewController: UIViewController {
             model.info = deviceTextView.text ?? ""
         }
         self.isEditMode = !self.isEditMode
-    }
-    
-    func showSimpleActionSheet() {
-        let alert = UIAlertController(title: "Actions", message: nil, preferredStyle: .actionSheet)
-        alert.addAction(UIAlertAction(title: "Change Photo", style: .default, handler: { (_) in
-            self.presentImagePicker()
-        }))
-        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: {_ in }))
-        
-        self.present(alert, animated: true, completion: {})
-    }
-    
-    func presentImagePicker() {
-        let pickerController = UIImagePickerController()
-        pickerController.delegate = self
-        pickerController.sourceType = .photoLibrary
-
-        self.present(pickerController, animated: true, completion: nil)
-    }
-    
-    func updateUI() {
-        self.rightNavButton?.title = self.isEditMode ? "Save" : "Edit"
-    
-        self.deviceImageView.isUserInteractionEnabled = self.isEditMode
-        self.deviceTextView.isUserInteractionEnabled = self.isEditMode
-        self.deviceTextField.isUserInteractionEnabled = self.isEditMode
     }
 }
 
@@ -135,5 +111,47 @@ extension DeviceInfoViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
+    }
+}
+
+private extension DeviceInfoViewController {
+    
+    func showSimpleActionSheet() {
+        let alert = UIAlertController(title: "Actions", message: nil, preferredStyle: .actionSheet)
+        alert.addAction(UIAlertAction(title: "Change Photo", style: .default, handler: { (_) in
+            self.presentImagePicker()
+        }))
+        if UIImagePickerController.isSourceTypeAvailable(.camera) {
+            alert.addAction(UIAlertAction(title: "To make a Photo", style: .default, handler: { (_) in
+            self.presentCameraPicker()
+            }))
+        }
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: {_ in }))
+        
+        self.present(alert, animated: true, completion: {})
+    }
+    
+    func presentImagePicker() {
+        let pickerController = UIImagePickerController()
+        pickerController.delegate = self
+        pickerController.sourceType = .photoLibrary
+
+        self.present(pickerController, animated: true, completion: nil)
+    }
+    
+    func presentCameraPicker() {
+        let pickerController = UIImagePickerController()
+        pickerController.delegate = self
+        pickerController.sourceType = .camera
+
+        self.present(pickerController, animated: true, completion: nil)
+    }
+    
+    func updateUI() {
+        self.rightNavButton?.title = self.isEditMode ? "Save" : "Edit"
+    
+        self.deviceImageView.isUserInteractionEnabled = self.isEditMode
+        self.deviceTextView.isUserInteractionEnabled = self.isEditMode
+        self.deviceTextField.isUserInteractionEnabled = self.isEditMode
     }
 }

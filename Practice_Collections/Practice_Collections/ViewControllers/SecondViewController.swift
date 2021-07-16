@@ -14,14 +14,14 @@ class SecondViewController: UIViewController {
         
     var arrayOfData = [ExpandedModel]()
     
-    let headerID = String(describing: CustomHeaderView.self)
-    let deviceCellID = String(describing: DeviceTableViewCell.self)
-    let heightForRowAt: CGFloat = 100.0
-    let heightForHeaderInSection: CGFloat = 60.0
+    private let headerID = String(describing: CustomHeaderView.self)
+    private let deviceCellID = String(describing: DeviceTableViewCell.self)
+    private let heightForRowAt: CGFloat = 100.0
+    private let heightForHeaderInSection: CGFloat = 60.0
     
-    let titleForIPhoneSection = "iPhone"
-    let titleForIPadSection = "iPad"
-    var defaultValueForIsExpanded = false
+    private let titleForIPhoneSection = "iPhone"
+    private let titleForIPadSection = "iPad"
+    private var defaultValueForIsExpanded = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -84,7 +84,7 @@ extension SecondViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        let done = doneAction(indexPath: indexPath)
+        let done = tableViewDidDeleteRow(indexPath: indexPath)
         return UISwipeActionsConfiguration(actions: [done])
     }
     
@@ -104,7 +104,7 @@ extension SecondViewController: UITableViewDelegate {
         return header
     }
     
-    func doneAction(indexPath: IndexPath) -> UIContextualAction {
+    func tableViewDidDeleteRow(indexPath: IndexPath) -> UIContextualAction {
         let action = UIContextualAction(style: .destructive, title: "Delete") { (action, view, completion) in
             let object = self.arrayOfData[indexPath.section].arrayDevices[indexPath.row]
             SharedModel.sharedInstance.removeObject(object: object)
@@ -128,7 +128,7 @@ extension SecondViewController: UITableViewDelegate {
 
 extension SecondViewController: HeaderViewDelegate {
     
-    func addItemToList(button: UIButton, type: DeviceType) {
+    func headerViewDidAddItemToList(type: DeviceType) {
         let isExpanded = arrayOfData[type.rawValue].isExpanded
             
         let viewController = DeviceInfoViewController.create() as DeviceInfoViewController
@@ -149,7 +149,7 @@ extension SecondViewController: HeaderViewDelegate {
         tableView.reloadSections(IndexSet(integer: deviceType.rawValue), with: .automatic)
     }
     
-    func expandedSection(button: UIButton, type: DeviceType) {
+    func headerViewDidExpandedSection(type: DeviceType) {
         let isExpanded = arrayOfData[type.rawValue].isExpanded
         arrayOfData[type.rawValue].isExpanded = !isExpanded
         tableView.reloadSections(IndexSet(integer: type.rawValue), with: .automatic)

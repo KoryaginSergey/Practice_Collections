@@ -30,7 +30,9 @@ class DeviceModel {
         
     static func getAllPhones() -> [DeviceModel] {
         let arrayAllPhones = Device.allPhones.map { (device) -> DeviceModel in
-            let model = DeviceModel(icon: UIImage(named: device.rawValue.lowercased()) ?? UIImage(named: "Unknown")!, name: device.rawValue, info: "\(device.description) \(device.diagonal) \(String(describing: device.ppi))", type: .phone)
+            let model = DeviceModel(icon: UIImage(named: device.rawValue.lowercased()) ?? UIImage(named: "Unknown")!,
+                                    name: device.rawValue, info: "\(device.description) \(device.diagonal) \(String(describing: device.ppi))",
+                                    type: .phone)
             return model
         }
         return arrayAllPhones
@@ -38,7 +40,9 @@ class DeviceModel {
     
     static func getAllPads() -> [DeviceModel] {
         let arrayAllPads = Device.allPads.map { (device) -> DeviceModel in
-            let model = DeviceModel(icon: UIImage(named: device.rawValue.lowercased()) ?? UIImage(named: "Unknown")!, name: device.rawValue, info: "\(device.description) \(device.diagonal) \(String(describing: device.ppi))", type: .pad)
+            let model = DeviceModel(icon: UIImage(named: device.rawValue.lowercased()) ?? UIImage(named: "Unknown")!,
+                                    name: device.rawValue, info: "\(device.description) \(device.diagonal) \(String(describing: device.ppi))",
+                                    type: .pad)
             return model
         }
         return arrayAllPads

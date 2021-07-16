@@ -13,7 +13,8 @@ class FirstViewController: UIViewController {
     @IBOutlet weak private var tableView: UITableView!
     
     var devices:[DeviceModel] = SharedModel.sharedInstance.allDevices
-    let deviceCellID = String(describing: DeviceTableViewCell.self)
+    private let deviceCellID = String(describing: DeviceTableViewCell.self)
+    private let defaultHeightForRow: CGFloat = 100
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,7 +55,7 @@ extension FirstViewController: UITableViewDataSource {
 extension FirstViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100.0
+        return defaultHeightForRow
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
