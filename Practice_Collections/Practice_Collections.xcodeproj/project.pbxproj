@@ -9,21 +9,45 @@
 /* Begin PBXBuildFile section */
 		8476348C269CB4E100D5FBF4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8476348B269CB4E100D5FBF4 /* AppDelegate.swift */; };
 		8476348E269CB4E100D5FBF4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8476348D269CB4E100D5FBF4 /* SceneDelegate.swift */; };
-		84763490269CB4E100D5FBF4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8476348F269CB4E100D5FBF4 /* ViewController.swift */; };
 		84763493269CB4E100D5FBF4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84763491269CB4E100D5FBF4 /* Main.storyboard */; };
 		84763495269CB4E400D5FBF4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84763494269CB4E400D5FBF4 /* Assets.xcassets */; };
 		84763498269CB4E400D5FBF4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84763496269CB4E400D5FBF4 /* LaunchScreen.storyboard */; };
+		F1BDAC5626A0482A0047171B /* DeviceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BDAC4626A0482A0047171B /* DeviceTableViewCell.swift */; };
+		F1BDAC5726A0482A0047171B /* DeviceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1BDAC4726A0482A0047171B /* DeviceTableViewCell.xib */; };
+		F1BDAC5826A0482A0047171B /* DeviceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BDAC4926A0482A0047171B /* DeviceModel.swift */; };
+		F1BDAC5926A0482A0047171B /* ExpandedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BDAC4A26A0482A0047171B /* ExpandedModel.swift */; };
+		F1BDAC5A26A0482A0047171B /* Device.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BDAC4B26A0482A0047171B /* Device.generated.swift */; };
+		F1BDAC5B26A0482A0047171B /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BDAC4D26A0482A0047171B /* UIViewController+Extension.swift */; };
+		F1BDAC5C26A0482A0047171B /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BDAC4F26A0482A0047171B /* FirstViewController.swift */; };
+		F1BDAC5D26A0482A0047171B /* DeviceInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BDAC5026A0482A0047171B /* DeviceInfoViewController.swift */; };
+		F1BDAC5E26A0482A0047171B /* DeviceInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1BDAC5126A0482A0047171B /* DeviceInfoViewController.xib */; };
+		F1BDAC5F26A0482A0047171B /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BDAC5226A0482A0047171B /* SecondViewController.swift */; };
+		F1BDAC6026A0482B0047171B /* CustomHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1BDAC5426A0482A0047171B /* CustomHeaderView.xib */; };
+		F1BDAC6126A0482B0047171B /* CustomHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BDAC5526A0482A0047171B /* CustomHeaderView.swift */; };
+		F1BDAC6826A04D200047171B /* SharedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BDAC6726A04D200047171B /* SharedModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		84763488269CB4E100D5FBF4 /* Practice_Collections.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Practice_Collections.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8476348B269CB4E100D5FBF4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8476348D269CB4E100D5FBF4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		8476348F269CB4E100D5FBF4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		84763492269CB4E100D5FBF4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		84763494269CB4E400D5FBF4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		84763497269CB4E400D5FBF4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		84763499269CB4E400D5FBF4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F1BDAC4626A0482A0047171B /* DeviceTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceTableViewCell.swift; sourceTree = "<group>"; };
+		F1BDAC4726A0482A0047171B /* DeviceTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DeviceTableViewCell.xib; sourceTree = "<group>"; };
+		F1BDAC4926A0482A0047171B /* DeviceModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceModel.swift; sourceTree = "<group>"; };
+		F1BDAC4A26A0482A0047171B /* ExpandedModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpandedModel.swift; sourceTree = "<group>"; };
+		F1BDAC4B26A0482A0047171B /* Device.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Device.generated.swift; sourceTree = "<group>"; };
+		F1BDAC4D26A0482A0047171B /* UIViewController+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		F1BDAC4F26A0482A0047171B /* FirstViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
+		F1BDAC5026A0482A0047171B /* DeviceInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceInfoViewController.swift; sourceTree = "<group>"; };
+		F1BDAC5126A0482A0047171B /* DeviceInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DeviceInfoViewController.xib; sourceTree = "<group>"; };
+		F1BDAC5226A0482A0047171B /* SecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		F1BDAC5426A0482A0047171B /* CustomHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomHeaderView.xib; sourceTree = "<group>"; };
+		F1BDAC5526A0482A0047171B /* CustomHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomHeaderView.swift; sourceTree = "<group>"; };
+		F1BDAC6726A04D200047171B /* SharedModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +80,67 @@
 		8476348A269CB4E100D5FBF4 /* Practice_Collections */ = {
 			isa = PBXGroup;
 			children = (
+				F1BDAC4526A0482A0047171B /* Cells */,
+				F1BDAC4C26A0482A0047171B /* Extensions */,
+				F1BDAC4826A0482A0047171B /* Models */,
+				F1BDAC4E26A0482A0047171B /* ViewControllers */,
+				F1BDAC5326A0482A0047171B /* Views */,
 				8476348B269CB4E100D5FBF4 /* AppDelegate.swift */,
 				8476348D269CB4E100D5FBF4 /* SceneDelegate.swift */,
-				8476348F269CB4E100D5FBF4 /* ViewController.swift */,
 				84763491269CB4E100D5FBF4 /* Main.storyboard */,
 				84763494269CB4E400D5FBF4 /* Assets.xcassets */,
 				84763496269CB4E400D5FBF4 /* LaunchScreen.storyboard */,
 				84763499269CB4E400D5FBF4 /* Info.plist */,
 			);
 			path = Practice_Collections;
+			sourceTree = "<group>";
+		};
+		F1BDAC4526A0482A0047171B /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				F1BDAC4626A0482A0047171B /* DeviceTableViewCell.swift */,
+				F1BDAC4726A0482A0047171B /* DeviceTableViewCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		F1BDAC4826A0482A0047171B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F1BDAC4926A0482A0047171B /* DeviceModel.swift */,
+				F1BDAC4A26A0482A0047171B /* ExpandedModel.swift */,
+				F1BDAC4B26A0482A0047171B /* Device.generated.swift */,
+				F1BDAC6726A04D200047171B /* SharedModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		F1BDAC4C26A0482A0047171B /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F1BDAC4D26A0482A0047171B /* UIViewController+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		F1BDAC4E26A0482A0047171B /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				F1BDAC5026A0482A0047171B /* DeviceInfoViewController.swift */,
+				F1BDAC5126A0482A0047171B /* DeviceInfoViewController.xib */,
+				F1BDAC4F26A0482A0047171B /* FirstViewController.swift */,
+				F1BDAC5226A0482A0047171B /* SecondViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		F1BDAC5326A0482A0047171B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F1BDAC5426A0482A0047171B /* CustomHeaderView.xib */,
+				F1BDAC5526A0482A0047171B /* CustomHeaderView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,8 +201,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				84763498269CB4E400D5FBF4 /* LaunchScreen.storyboard in Resources */,
+				F1BDAC5E26A0482A0047171B /* DeviceInfoViewController.xib in Resources */,
 				84763495269CB4E400D5FBF4 /* Assets.xcassets in Resources */,
 				84763493269CB4E100D5FBF4 /* Main.storyboard in Resources */,
+				F1BDAC6026A0482B0047171B /* CustomHeaderView.xib in Resources */,
+				F1BDAC5726A0482A0047171B /* DeviceTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,9 +216,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84763490269CB4E100D5FBF4 /* ViewController.swift in Sources */,
+				F1BDAC6826A04D200047171B /* SharedModel.swift in Sources */,
 				8476348C269CB4E100D5FBF4 /* AppDelegate.swift in Sources */,
+				F1BDAC5826A0482A0047171B /* DeviceModel.swift in Sources */,
 				8476348E269CB4E100D5FBF4 /* SceneDelegate.swift in Sources */,
+				F1BDAC5926A0482A0047171B /* ExpandedModel.swift in Sources */,
+				F1BDAC5B26A0482A0047171B /* UIViewController+Extension.swift in Sources */,
+				F1BDAC5A26A0482A0047171B /* Device.generated.swift in Sources */,
+				F1BDAC5C26A0482A0047171B /* FirstViewController.swift in Sources */,
+				F1BDAC5626A0482A0047171B /* DeviceTableViewCell.swift in Sources */,
+				F1BDAC6126A0482B0047171B /* CustomHeaderView.swift in Sources */,
+				F1BDAC5F26A0482A0047171B /* SecondViewController.swift in Sources */,
+				F1BDAC5D26A0482A0047171B /* DeviceInfoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,6 +376,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Practice_Collections/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -306,6 +395,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Practice_Collections/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
