@@ -18,8 +18,8 @@ class DeviceInfoViewController: UIViewController {
     @IBOutlet weak private var deviceTextView: UITextView!
     @IBOutlet weak private var infoView: UIView!
     
-    @IBOutlet weak var viewTopConstraint: NSLayoutConstraint!
-    let defaultTopConstraint:CGFloat = 0.0
+    @IBOutlet weak private var viewTopConstraint: NSLayoutConstraint!
+    let defaultTopConstraint: CGFloat = 0.0
     
     var saveClosure: ((_ model: DeviceModel) -> ())?
     
@@ -49,8 +49,10 @@ class DeviceInfoViewController: UIViewController {
         self.deviceImageView.gestureRecognizers = [tapGesture]
         
         //keyboard notifications
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: UIApplication.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name: UIApplication.keyboardWillHideNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)),
+                                               name: UIApplication.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notification:)),
+                                               name: UIApplication.keyboardWillHideNotification, object: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -104,7 +106,9 @@ class DeviceInfoViewController: UIViewController {
     //MARK: - Extensions
 
 extension DeviceInfoViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-   func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+    
+   func imagePickerController(_ picker: UIImagePickerController,
+                              didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
        guard let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else {
            return
        }
