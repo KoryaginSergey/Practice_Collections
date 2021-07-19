@@ -18,6 +18,9 @@ class DeviceInfoViewController: UIViewController {
     @IBOutlet weak private var deviceTextView: UITextView!
     @IBOutlet weak private var infoView: UIView!
     
+    @IBOutlet weak var viewTopConstraint: NSLayoutConstraint!
+    let defaultTopConstraint:CGFloat = 0.0
+    
     var saveClosure: ((_ model: DeviceModel) -> ())?
     
     var isEditMode: Bool = false {
@@ -44,6 +47,10 @@ class DeviceInfoViewController: UIViewController {
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(chooseImageSelector))
         self.deviceImageView.gestureRecognizers = [tapGesture]
+        
+        //keyboard notifications
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: UIApplication.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name: UIApplication.keyboardWillHideNotification, object: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -115,6 +122,25 @@ extension DeviceInfoViewController: UITextFieldDelegate {
 }
 
 private extension DeviceInfoViewController {
+    
+    @objc func keyboardWillShow(notification: NSNotification) {
+        if let keyboardRectValue = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+            let keyboardHeight = keyboardRectValue.height
+            
+            let bottomDistanceToInfoView =  self.view.frame.size.height - (self.infoView.frame.origin.y + self.infoView.frame.size.height)
+            let bottomInset:CGFloat = 20.0
+            let bottomDistance = bottomDistanceToInfoView - bottomInset
+            if bottomDistance < keyboardHeight  {
+                self.viewTopConstraint.constant = (keyboardHeight - bottomDistance) * -1.0
+                self.view.layoutIfNeeded()
+            }
+        }
+    }
+
+    @objc func keyboardWillHide(notification: NSNotification) {
+        self.viewTopConstraint.constant = defaultTopConstraint
+        self.view.layoutIfNeeded()
+    }
     
     func showSimpleActionSheet() {
         let alert = UIAlertController(title: "Actions", message: nil, preferredStyle: .actionSheet)
